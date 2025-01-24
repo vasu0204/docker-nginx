@@ -1,17 +1,10 @@
-# Use an official minimal Nginx image based on Alpine
-FROM nginx:alpine
-
-# Update all packages and remove unnecessary components
-RUN apk update && apk upgrade --no-cache && \
-    apk add --no-cache tini && \
-    rm -rf /var/cache/apk/*
+# Use a more secure, lightweight, and maintained Nginx base image
+FROM bitnami/nginx:latest
 
 # Copy the HTML file into the Nginx server directory
-COPY index.html /usr/share/nginx/html/
+COPY index.html /opt/bitnami/nginx/html/
 
 # Expose the web server port
 EXPOSE 8080
 
-# Use tini as the init system to manage processes correctly
-ENTRYPOINT ["/sbin/tini", "--"]
-CMD ["nginx", "-g", "daemon off;"]
+# Use the default CMD provided by the Bitnami image
