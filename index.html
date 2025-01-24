@@ -1,40 +1,70 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Container Security Scanning Project</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My First HTML Page</title>
     <style>
         body {
             font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 20px;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 0;
             text-align: center;
-            background-color: #f4f4f9;
-            margin: 0;
-            padding: 20px;
         }
-        h1 {
-            color: #007acc;
+        nav {
+            margin: 20px 0;
         }
-        p {
-            color: #333;
-            font-size: 18px;
+        nav a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #4CAF50;
         }
-        .highlight {
-            color: #e63946;
-            font-weight: bold;
+        nav a:hover {
+            text-decoration: underline;
+        }
+        section {
+            margin-bottom: 20px;
+        }
+        footer {
+            text-align: center;
+            color: #777;
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
-    <h1>Container Security Scanning with Docker and Jenkins</h1>
-    <p>Welcome to the <span class="highlight">Container Security Scanning</span> project.</p>
-    <p>This project demonstrates how to:</p>
-    <ul>
-        <li>Build Docker images using Jenkins pipelines.</li>
-        <li>Integrate <span class="highlight">Trivy</span> to scan images for vulnerabilities.</li>
-        <li>Push secure images to Docker Hub after passing all security checks.</li>
-    </ul>
-    <p>Visit our repository on <a href="https://github.com/vasu0204/docker-nginx" target="_blank">GitHub</a> for more details.</p>
+    <header>
+        <h1>Welcome to My Website</h1>
+    </header>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <section id="home">
+        <h2>Home</h2>
+        <p>This is the home section of the website. You can add content here to greet your visitors.</p>
+    </section>
+
+    <section id="about">
+        <h2>About</h2>
+        <p>This section contains information about you or your website. Share your story here!</p>
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>Feel free to <a href="mailto:your-email@example.com">email me</a> with any questions or comments.</p>
+    </section>
+
     <footer>
-        <p>&copy; 2025 Container Security Project by Vasu0204. All rights reserved.</p>
+        <p>&copy; 2025 My Website. All rights reserved.</p>
     </footer>
 </body>
 </html>
