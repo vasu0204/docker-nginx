@@ -1,10 +1,14 @@
-# Use a more secure, lightweight, and maintained Nginx base image
-FROM bitnami/nginx:latest
+# Use the official Nginx image as the base
+FROM nginx:latest
 
-# Copy the HTML file into the Nginx server directory
-COPY index.html /opt/bitnami/nginx/html/
+# Set the working directory
+WORKDIR /usr/share/nginx/html
 
-# Expose the web server port
-EXPOSE 8080
+# Copy the index.html into the Nginx web directory
+COPY index.html .
 
-# Use the default CMD provided by the Bitnami image
+# Expose port 80 to allow access to the web server
+EXPOSE 80
+
+# Start Nginx server
+CMD ["nginx", "-g", "daemon off;"]
