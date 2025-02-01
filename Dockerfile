@@ -1,7 +1,11 @@
 FROM python:3.9-slim
 
 # Update and upgrade the OS packages
-RUN apt-get update && apt-get upgrade -y && apt-get install --only-upgrade perl-base zlib1g
+RUN apt-get update && apt-get upgrade -y && apt-get install --only-upgrade \
+    libkrb5-3 \
+    libgssapi-krb5-2 \
+    perl-base \
+    zlib1g
 
 # Set work directory
 WORKDIR /app
