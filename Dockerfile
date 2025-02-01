@@ -1,5 +1,5 @@
 # Use the official Nginx image as the base
-FROM nginx:latest
+FROM debian:latest
 
 # Set the working directory
 WORKDIR /usr/share/nginx/html
