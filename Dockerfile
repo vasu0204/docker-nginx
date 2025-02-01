@@ -1,17 +1,20 @@
-# Use the latest, stable, and secure Nginx image
-FROM nginx:stable-alpine
+# Use an official Python runtime as a parent image
+FROM python:3.9-slim
 
-# Set the working directory
-WORKDIR /usr/share/nginx/html
+# Set the working directory in the container
+WORKDIR /app
 
-# Copy static HTML content into the container
-COPY index.html .
+# Copy the current directory contents into the container at /app
+COPY . /app
 
-# Update base image packages and clean up unnecessary files
-RUN apk update && apk upgrade --no-cache && rm -rf /var/cache/apk/*
+# Install any needed packages specified in requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
 
-# Expose port 80 for web traffic
+# Make port 80 available to the world outside this container
 EXPOSE 80
 
-# Start Nginx
-CMD ["nginx", "-g", "daemon off;"]
+# Define environment variable
+ENV NAME World
+
+# Run app.py when the container launches
+CMD ["python", "app.py"]
