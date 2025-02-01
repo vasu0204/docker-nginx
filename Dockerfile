@@ -1,16 +1,16 @@
-# Use a lightweight, secure Nginx image
+# Use the latest, stable, and secure Nginx image
 FROM nginx:stable-alpine
 
 # Set the working directory
 WORKDIR /usr/share/nginx/html
 
-# Copy the static content into the container
+# Copy static HTML content into the container
 COPY index.html .
 
-# Update and clean up packages
-RUN apk update && apk upgrade && rm -rf /var/cache/apk/*
+# Update base image packages and clean up unnecessary files
+RUN apk update && apk upgrade --no-cache && rm -rf /var/cache/apk/*
 
-# Expose port 80
+# Expose port 80 for web traffic
 EXPOSE 80
 
 # Start Nginx
