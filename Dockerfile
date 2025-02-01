@@ -7,16 +7,13 @@ RUN apt-get update && apt-get upgrade -y && apt-get install --only-upgrade \
     perl-base \
     zlib1g
 
-# Consider switching to a non-slim base image if possible
-# FROM python:3.9
-
 # Set work directory
 WORKDIR /app
 
 # Copy application code
 COPY . /app
 
-# Install requirements and ensure no outdated dependencies
+# Install requirements
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Set default command
