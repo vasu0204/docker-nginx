@@ -1,1 +1,2 @@
-Flask==2.1.1
+Flask==2.3.2  # Update to a fixed version
+setuptools==65.5.1  # Update to a fixed version
